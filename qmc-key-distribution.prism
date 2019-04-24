@@ -1,7 +1,7 @@
 qmc
 
-const vector |p> = (|0> + |1>)/sqrt(2); //|+> state
-const vector |m> = (|0> - |1>)/sqrt(2); //|-> state
+const vector(2) |p> = (|0> + |1>)/sqrt(2); //|+> state
+const vector(2) |m> = (|0> - |1>)/sqrt(2); //|-> state
 const superoperator(2) setplus = <<|p> <0|,|p> <1|>>; // Set the target qubit to |+>
 const superoperator(2) set0 = <<|0> <0|,|0> <1|>>; // Set the target qubit to |0>
 const superoperator(2) measurep = <<|p> <p|>>; //measurement in {|+>, |->} and get result +
