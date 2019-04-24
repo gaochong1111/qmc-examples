@@ -1,14 +1,14 @@
 qmc
 
-const vector |b00>_2 = (|0>_2|0>_2 + |1>_2|1>_2)/sqrt(2); 
-const vector |b01>_2 = (|0>_2|1>_2 + |1>_2|0>_2)/sqrt(2);
-const vector |b10>_2 = (|0>_2|0>_2 - |1>_2|1>_2)/sqrt(2);
-const vector |b11>_2 = (|0>_2|1>_2 - |1>_2|0>_2)/sqrt(2);
+const vector(4) |b00> = (|0>|0> + |1>|1>)/sqrt(2); 
+const vector(4) |b01> = (|0>|1> + |1>|0>)/sqrt(2);
+const vector(4) |b10> = (|0>|0> - |1>|1>)/sqrt(2);
+const vector(4) |b11> = (|0>|1> - |1>|0>)/sqrt(2);
 
-const matrix B00 = |b00>_2 <b00|_2; 
-const matrix B01 = |b01>_2 <b01|_2; 
-const matrix B10 = |b10>_2 <b10|_2; 
-const matrix B11 = |b11>_2 <b11|_2;
+const matrix B00 = |b00> <b00|; 
+const matrix B01 = |b01> <b01|; 
+const matrix B10 = |b10> <b10|; 
+const matrix B11 = |b11> <b11|;
 
 module sdc
 
@@ -16,8 +16,8 @@ s : [0..11] init 0;
 
 //Preparation of Bell state (|00> + |11>)/sqrt(2)
 
-  [] (s=0) -> << |b00>_2 <b00|_2, |b00>_2 <b01|_2, |b00>_2 <b10|_2, 
-     	      	 	 |b00>_2 <b11|_2 >> : (s'=1); 
+  [] (s=0) -> << |b00> <b00|, |b00> <b01|, |b00> <b10|, 
+     	      	 	 |b00> <b11| >> : (s'=1); 
   
 //Alice chooses her message from 0,1,2,3 randomly
   [] (s=1) -> 0.25 : (s'=2) + 0.25 : (s'=3)  

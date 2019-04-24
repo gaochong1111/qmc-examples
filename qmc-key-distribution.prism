@@ -1,11 +1,11 @@
 qmc
 
-const vector |p>_2 = (|0>_2 + |1>_2)/sqrt(2); //|+> state
-const vector |m>_2 = (|0>_2 - |1>_2)/sqrt(2); //|-> state
-const superoperator(2) setplus = <<|p>_2 <0|_2,|p>_2 <1|_2>>; // Set the target qubit to |+>
-const superoperator(2) set0 = <<|0>_2 <0|_2,|0>_2 <1|_2>>; // Set the target qubit to |0>
-const superoperator(2) measurep = <<|p>_2 <p|_2>>; //measurement in {|+>, |->} and get result +
-const superoperator(2) measurem = <<|m>_2 <m|_2>>; //measurement in {|+>, |->} and get result -
+const vector |p> = (|0> + |1>)/sqrt(2); //|+> state
+const vector |m> = (|0> - |1>)/sqrt(2); //|-> state
+const superoperator(2) setplus = <<|p> <0|,|p> <1|>>; // Set the target qubit to |+>
+const superoperator(2) set0 = <<|0> <0|,|0> <1|>>; // Set the target qubit to |0>
+const superoperator(2) measurep = <<|p> <p|>>; //measurement in {|+>, |->} and get result +
+const superoperator(2) measurem = <<|m> <m|>>; //measurement in {|+>, |->} and get result -
 
 module BB84
 
